@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'jogos',
     'livros',
     'compras',
-    'gerenciamento_contas'
+    'gerenciamento_contas',
+    'user'
 ]
 
 MIDDLEWARE = [

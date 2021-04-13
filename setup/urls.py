@@ -2,13 +2,17 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from dispensa.views import DispensaViewSet
+from compras.views import ComprasViewSet
+from pessoas.views import PessoasViewset
+from jogos.views import JogosViewset
+from livros.views import LivrosViewset
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register('dispensa', DispensaViewSet, basename='dispensa')
-router.register('lista_compras', DispensaViewSet, basename='lista')
-router.register('jogos', DispensaViewSet, basename='jogos')
-router.register('livros', DispensaViewSet, basename='livros')
-router.register('pessoas', DispensaViewSet, basename='pessoas')
+router.register('compras', ComprasViewSet, basename='compras')
+router.register('jogos', JogosViewset, basename='jogos')
+router.register('livros', LivrosViewset, basename='livros')
+router.register('pessoas', PessoasViewset, basename='pessoas')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .models import Jogos
+from .serializers import JogosSerializers
 
-# Create your views here.
+
+class JogosViewset(viewsets.ModelViewSet):
+    queryset = Jogos.objects.all()
+    serializer_class = JogosSerializers
