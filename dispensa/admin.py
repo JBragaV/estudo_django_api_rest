@@ -1,5 +1,4 @@
 from django.contrib import admin
-
 from dispensa.models import Dispensa
 # Register your models here.
 
