@@ -25,7 +25,6 @@ SECRET_KEY = 'django-insecure-v2j^nt($fr4(e7*$a@5#2651x(r!7#p08ud4rm=mvu%h%0w#z=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -44,12 +43,14 @@ INSTALLED_APPS = [
     'livros',
     'compras',
     'gerenciamento_contas',
-    'user'
+    'user',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -131,3 +132,8 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+if DEBUG:
+    CORS_ALLOW_ALL_ORIGINS = True
+else:
+    ALLOWED_HOSTS = ["*"]

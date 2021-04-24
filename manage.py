@@ -9,6 +9,8 @@ def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'setup.settings')
     try:
         from django.core.management import execute_from_command_line
+        print("Estou no manage.py")
+        print("Não esquecer de retirar o cors_allowed_all das settinsgs")
     except ImportError as exc:
         raise ImportError(
             "Couldn't import Django. Are you sure it's installed and "
