@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'compras',
     'gerenciamento_contas',
     'user',
+    'farmacia',
     'corsheaders'
 ]
 

@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .models import Farmacia
+from .serializers import FarmaciaSerializers
 
-# Create your views here.
+
+class FarmaciaViewSet(viewsets.ModelViewSet):
+    queryset = Farmacia.objects.all()
+    serializer_class = FarmaciaSerializers
